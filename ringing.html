@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+        </div>
+        <div data-key="68" class="key">
+            <kbd>D</kbd>
+        </div>
+        <div data-key="72" class="key">
+            <kbd>H</kbd>
+        </div>
+        <div data-key="74" class="key">
+            <kbd>J</kbd>
+        </div>
+        <div data-key="75" class="key">
+            <kbd>K</kbd>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+        </div>
+        <audio data-key="65" src="Tamba_112.wav"></audio>
+        <audio data-key="83" src="../../Downloads/Boom_Chuk2_130.wav"></audio>
+        <audio data-key="68" src="../../Downloads/RatAtat_155.wav"></audio>
+        <audio data-key="72" src="../../Downloads/Basic_Rock_Crash_135.wav"></audio>
+        <audio data-key="74" src="../../Downloads/Basic_Rock_FillintoCrash_135.wav"></audio>
+        <audio data-key="75" src="../../Downloads/Car+Crash.wav"></audio>
+        <audio data-key="76" src="../../Downloads/Driving_Force_120.wav"></audio>
+        <script>
+
+         function playy(e)
+          {
+          //  const audio=document.querySelector("audio(data-key=${e.keyCode}]");
+          const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); 
+          const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+          if(!audio) return;
+          audio.currentTime=0;//restart in every click
+           audio.play();
+           key.classList.add('afterclick');
+          // let d=setTimeout(stopp,2000);
+           //function stopp()
+          // {
+          //  key.classList.remove('afterclick');
+          // }
+          const keys=document.querySelectorAll('.key');
+          keys.forEach(key=>key.addEventListener('transitionend',stopp));
+          function stopp()
+          {
+              key.classList.remove('afterclick');
+          }
+        }
+        document.addEventListener("keydown",playy);
+                
+           
+           
+
+        </script>
+
+    </body>
+
+</html>

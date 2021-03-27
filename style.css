@@ -1,0 +1,30 @@
+.key
+{   
+    font-size: 40px;
+    text-align: center;
+    margin:1rem;
+    border:4px solid black;
+    border-radius: 200px;
+    width:70px;
+    height:70px;
+    transition: all 1s;
+    padding: 1rem 1 rem;
+    background-color: darkgoldenrod;
+    text-shadow:3px 0 5px black;
+    justify-content: center;
+    float:left;
+    margin-left: 160px;
+    margin-top: 400px;
+    scroll-behavior: smooth;
+  
+   
+}
+.afterclick
+{
+  transform: scale(2,2);
+
+}
+body {
+    background-image: url("music.jpg");
+    background-color: #cccccc;
+   }
